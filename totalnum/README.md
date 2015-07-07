@@ -22,3 +22,7 @@
 -  extract csv from i2b2 database with SQL (queries described in R files as comment)
 -  run Rscript path2Csv1 path2Csv2 path2Csv3 with the console
 -  it produces 2 columns files : c_fullname & totalnum  (the result)
+
+## Castle of Cards Algorithm
+
+- described in the poster pdf
