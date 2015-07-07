@@ -3,7 +3,8 @@
 ## What is it ?
 
 - calculates number of patient for each ontologie level
-- uses the "castle of cards" algorithm presented at i2b2 aug meeting 2015 boston
+- FACT TABLE (totalNumFact.R): uses the "castle of cards" algorithm presented at i2b2 aug meeting 2015 boston
+- DIMENSIONS (totalNumPatientVisit.R): "just" translate sql in the i2b2 table as R code. Depending on the sql you uses, may not work.
 - facts, patient, visit & provider dimension
 - takes 10 minutes, on 1GHZ6 & 4GB Ram
   - with observation_fact = 50M
@@ -26,3 +27,6 @@
 ## Castle of Cards Algorithm
 
 - described in the poster pdf
+
+
+
