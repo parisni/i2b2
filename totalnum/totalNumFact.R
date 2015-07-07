@@ -1,5 +1,5 @@
 # Castle Of Cards Algorithm
-# Author: Nicolas PARIS nicolas.patis@riseup.net
+# Author: Nicolas PARIS nicolas.paris@riseup.net
 # Needs: data.table V1.9.4 & later
 library(data.table)
 # ARGS for FACTS:

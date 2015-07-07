@@ -1,4 +1,4 @@
-# Author: Nicolas PARIS nicolas.patis@riseup.net
+# Author: Nicolas PARIS nicolas.paris@riseup.net
 # Needs: data.table V1.9.4 & later
 # may difers from fields of visit/patient dimension
 args <- commandArgs(trailingOnly = TRUE)
