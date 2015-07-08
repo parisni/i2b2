@@ -41,15 +41,13 @@ paste0("\"",champs,"\"=length(unique(unlist(strsplit(paste0(",ret,",collapse=','
 pat<-fread(file.path(args[1]),colClasses="character",header=T,sep=";")
 ont<-fread(file.path(args[2]),colClasses="character",header=T,sep=";")
 if(nrow(pat)!=0){
-ab<-ont
-ab[,calc:=paste(c_columnname,c_operator,c_dimcode)]
-su<-pat[,eval(parse(text=paste0("list(",paste0(transformSql2R(ab$calc,ab$c_operator,ab$c_columnname,ab$c_dimcode,ab$c_columndatatype),collapse=","), ")"))),]
+ont[,calc:=paste(c_columnname,c_operator,c_dimcode)]
+su<-pat[,eval(parse(text=paste0("list(",paste0(transformSql2R(ont$calc,ont$c_operator,ont$c_columnname,ont$c_dimcode,ont$c_columndatatype),collapse=","), ")"))),]
 a<-data.frame(row.names(t(su)),t(su)[,1],stringsAsFactors=F)
 setnames(a,c("calc","c_totalnum"))
-add<-merge(as.data.frame(ab), a ,by="calc")
-add<-add[,c("c_fullname","c_totalnum")]
-add<-add[!duplicated(add$c_fullname),]
-res<-add
+res <- merge(as.data.frame(ont), a ,by="calc")
+res <- res[,c("c_fullname","c_totalnum")]
+res <- res[!duplicated(res$c_fullname),]
 }else{
 res<-data.table("c_fullname"=ont$c_fullname,"c_totalnum"="0")
 }
